@@ -3039,9 +3039,6 @@ const RapidReviewPage = () => {
         id="virtualComputerDiv"
         style={{ height: '720px', width: '1280px' }}
       />
-      <button style={{ width: '400px', height: '200px' }} onClick={surprise}>
-        SURPRISE ME 😱
-      </button>
       <ul style={{ height: '300px', padding: 0 }}>
         {COMPANIES.map((company) => (
           <Company
