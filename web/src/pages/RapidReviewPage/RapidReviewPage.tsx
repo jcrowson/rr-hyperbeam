@@ -2,7 +2,6 @@ import { useRef } from 'react'
 
 import Hyperbeam from '@hyperbeam/web'
 
-import { useLocation } from '@redwoodjs/router'
 import { MetaTags } from '@redwoodjs/web'
 
 import { COMPANIES } from './companies'
@@ -10,12 +9,11 @@ import { COMPANIES } from './companies'
 const RapidReviewPage = () => {
   const hyperbeamRef = useRef()
   const rrRef = useRef()
-  const location = useLocation()
 
   const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
   })
-  const embedURL = params.embed // "some_value"
+  const embedURL = params.embed
 
   function surprise() {
     const random = COMPANIES[Math.floor(Math.random() * COMPANIES.length)]
