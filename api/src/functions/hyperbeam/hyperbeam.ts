@@ -20,15 +20,12 @@ import { logger } from 'src/lib/logger'
  * function, and execution environment.
  */
 
-const KEY = 'sk_test_gKsX080pkDUKC2p-O2TBwNbjJktM9__Wv0v5ed7aPLE'
-const LIVE = 'sk_live_GEklk3VmQA9fH1Hc7WcumHWIud8Ia5iEChX-mtIDA00'
-
 export const handler = async (event: APIGatewayEvent, context: Context) => {
   logger.info('Invoked hyperbeam function')
 
   const response = await fetch(`https://engine.hyperbeam.com/v0/vm`, {
     method: 'POST',
-    headers: { Authorization: `Bearer ${LIVE}` },
+    headers: { Authorization: `Bearer test` },
   })
 
   const json = await response.json()
